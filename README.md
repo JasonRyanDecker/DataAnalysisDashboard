@@ -1,103 +1,70 @@
-# Data Dashboard (Node.js + Express + Anthropic API)
+# Getting Started with Create React App
 
-A backend service built with **Node.js** and **Express** that analyzes CSV data by sending it to the **Anthropic API (Claude)**.  
-The server accepts CSV content from the frontend, requests an AI-powered analysis, and returns structured JSON insights for use in dashboards or data apps.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
----
+## Available Scripts
 
-## 🚀 Features
-- Accepts CSV data via a POST request (`/api/analyze`)
-- Sends data to Anthropic’s API (Claude) for analysis
-- Returns a **clean JSON object** with:
-  - Dataset overview (rows, columns, column names)
-  - Column-level statistics (mean, median, std, top values, etc.)
-  - Insights and correlations
-  - Data prepared for charts/visualizations
-- Handles large CSVs with a configurable request limit
+In the project directory, you can run:
 
----
+### `npm start`
 
-## 📂 Project Structure
-```
-data-dashboard/
-├── server.js # Express backend (CSV -> Anthropic API -> JSON insights)
-├── package.json # Dependencies and scripts
-└── .gitignore
-```
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
----
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## ⚙️ Installation
+### `npm test`
 
-Clone the repository and install dependencies:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-```
-git clone https://github.com/YOUR-USERNAME/data-dashboard.git
-cd data-dashboard
-npm install
-```
-🔑 Environment Variables
-Before running the server, set your Anthropic API key:
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-`export ANTHROPIC_API_KEY=your_api_key_here`   # Linux / macOS
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-`setx ANTHROPIC_API_KEY "your_api_key_here"`  # Windows (PowerShell)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-▶️ Usage
-Start the server:
-``node server.js``
+### `npm run eject`
 
-You should see:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-``Proxy server running at http://localhost:3001``
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-📡 API Endpoint
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-POST /api/analyze
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Request Body
+## Learn More
 
-```
-{
-  "csvContent": "col1,col2\n1,2\n3,4"
-}
-```
-Response (example)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-```
-{
-  "overview": {
-    "rows": 2,
-    "columns": 2,
-    "columnNames": ["col1", "col2"]
-  },
-  "columns": [
-    {
-      "name": "col1",
-      "type": "numeric",
-      "missing": 0,
-      "unique": 2,
-      "stats": {
-        "mean": 2,
-        "median": 2,
-        "std": 1,
-        "min": 1,
-        "max": 3
-      }
-    }
-  ],
-  "insights": ["col1 and col2 are perfectly correlated"],
-  "correlations": [{"col1": "col1", "col2": "col2", "value": 1}]
-}
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-🛠️ Tech Stack
-Node.js – Backend runtime
+### Code Splitting
 
-Express – Web framework
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-CORS – Enable cross-origin requests
+### Analyzing the Bundle Size
 
-Anthropic API – AI analysis engine
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
